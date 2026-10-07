@@ -12,63 +12,93 @@
 - **Drmk.Proxy:** พร็อกซีเซิร์ฟเวอร์จัดการการเชื่อมต่อเครือข่าย
 - **Drmk.SDK:** ไลบรารีเครื่องมือและโครงสร้างข้อมูลสำหรับนักพัฒนา
 
-## 🛠️ ข้อกำหนดและเครื่องมือ (Prerequisites)
+## 📦 สิ่งที่ต้องติดตั้งก่อนใช้งาน (Prerequisites)
 
-เอกสารนี้อธิบายการใช้งานบน Windows เครื่องมือสำหรับพัฒนาและสร้างส่วนประกอบอาจแตกต่างกันตามส่วนของโปรเจกต์ที่ต้องการใช้งาน:
+สำหรับ Windows กรุณาดาวน์โหลดและติดตั้งโปรแกรมจำเป็นต่อไปนี้ก่อนเริ่มใช้งาน:
 
-- **.NET 8.0 SDK:** สำหรับสร้างหรือพัฒนาส่วนประกอบที่ใช้ .NET
-- **Rust (64-bit):** สำหรับส่วนประกอบที่พัฒนาด้วย Rust
-- **Python:** สำหรับสคริปต์และเครื่องมือที่เกี่ยวข้อง
-- **Node.js:** สำหรับเครื่องมือหรือส่วนติดต่อเว็บที่ใช้ Node.js
-- **Visual Studio Build Tools:** เลือก workload **Desktop development with C++** เมื่อต้องสร้างส่วนประกอบภาษา C++ หรือ Rust ที่ต้องใช้ตัวเชื่อมโยง C++
-- **Visual Studio Code:** โปรแกรมแก้ไขโค้ดที่แนะนำ
+- **Visual Studio Code:** [ดาวน์โหลด Visual Studio Code](https://code.visualstudio.com/)
+- **7-Zip:** [ดาวน์โหลด 7-Zip](https://www.7-zip.org/)
+- **Rust:** [ดาวน์โหลด Rust (rustup-init.exe 64-bit)](https://www.rust-lang.org/tools/install)
+- **Python:** [ดาวน์โหลด Python (Windows 64-bit)](https://www.python.org/downloads/windows/)
+- **.NET 8.0 Runtime / SDK:** [ดาวน์โหลด .NET 8.0](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
+- **Node.js:** [ดาวน์โหลด Node.js](https://nodejs.org/en)
+- **Visual Studio (C++ Workloads):** [ดาวน์โหลด Visual Studio](https://visualstudio.microsoft.com/downloads/)
 
-*การใช้งาน Launcher ที่สร้างไว้แล้วอาจไม่จำเป็นต้องติดตั้งเครื่องมือสำหรับพัฒนาทั้งหมด ให้ตรวจสอบข้อกำหนดของส่วนประกอบที่ต้องการใช้งานก่อนติดตั้ง*
+### 🛠️ คำแนะนำการติดตั้ง Visual Studio Code
 
-### 🔗 ดาวน์โหลดเครื่องมือจากเว็บไซต์ทางการ:
+1. ดาวน์โหลดตัวติดตั้ง **VS Code (Windows x64)** จากเว็บไซต์หลัก
+2. ดับเบิลคลิกเปิดไฟล์ติดตั้ง `.exe`
+3. เลือก **I accept the agreement** (ยอมรับข้อตกลงใช้งาน) แล้วกด **Next**
+4. ในหน้าเลือกตัวเลือกเพิ่มเติม แนะนำให้ติ๊กเลือก:
+   - **Create a desktop icon** (สร้างไอคอนบนหน้าจอ)
+   - **Add "Open with Code" to Windows Explorer file context menu** (เพิ่มเมนูเปิดด้วย VS Code เมื่อคลิกขวาที่ไฟล์)
+   - **Add "Open with Code" to Windows Explorer directory context menu** (เพิ่มเมนูเปิดด้วย VS Code เมื่อคลิกขวาที่โฟลเดอร์)
+5. กด **Next** แล้วกด **Install**
+6. เมื่อติดตั้งเสร็จแล้ว สามารถเปิดโปรแกรมขึ้นมา เลือกระธีมหน้าตา (Dark / Light) แล้วเริ่มใช้งานได้ทันที
 
-- [Visual Studio Code](https://code.visualstudio.com/)
-- [Rust](https://www.rust-lang.org/tools/install)
-- [Python สำหรับ Windows](https://www.python.org/downloads/windows/)
-- [.NET 8.0](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
-- [Node.js](https://nodejs.org/)
-- [Visual Studio](https://visualstudio.microsoft.com/downloads/)
+### 🛠️ คำแนะนำการติดตั้ง 7-Zip & Rust
 
-## 📥 ดาวน์โหลดไฟล์ระบบและตัวเกม (Downloads)
+**การติดตั้ง 7-Zip:**
+1. ดาวน์โหลดไฟล์ติดตั้งแบบ 64-bit (`.exe`) จากเว็บไซต์ 7-Zip
+2. ดับเบิลคลิกเปิดไฟล์และติดตั้งตามขั้นตอนปกติ
 
-- **GAME ANANTA (81.4 GB):** [ดาวน์โหลดตัวเกมผ่าน Gofile](https://gofile.io/d/AoWrjNoG)
+**การติดตั้ง Rust:**
+1. ดับเบิลคลิกที่ไฟล์ติดตั้ง (`rustup-init.exe`)
+2. เริ่มการติดตั้ง Rust หากโปรแกรมไม่เด้งหลุดออก
+3. ในตัวเลือกการติดตั้ง ให้กด **Enter** เพื่อใช้ค่าเริ่มต้น
+4. พิมพ์ `1` แล้วกด **Enter** (Proceed with installation)
+5. เมื่อการติดตั้งเสร็จสมบูรณ์ ให้กด **Enter** แล้วปิดหน้าต่างโปรแกรมออกไป
+
+### 🛠️ คำแนะนำการติดตั้ง Node.js
+1. เปิดไฟล์ติดตั้ง Node.js
+2. ติดตั้งโปรแกรมและรอจนกระทั่งขึ้นหน้าต่าง **Node.js®**
+3. เปิดโปรแกรม **Node.js**
+4. เสร็จสิ้นกระบวนการเตรียมการใช้งาน Node.js
+
+### 🛠️ คำแนะนำการติดตั้ง Visual Studio
+
+1. เปิดโปรแกรมติดตั้ง Visual Studio Installer และรอจนกว่ากระบวนการเตรียมการจะเสร็จสิ้น
+2. คุณต้องมี Visual Studio C++ เพื่อเรียกใช้ไฟล์ดาวน์โหลด Rust (หากยังไม่มีโปรแกรมติดตั้ง ให้ดาวน์โหลดจากลิงก์ด้านบน)
+3. หากมีโปรแกรมติดตั้งอยู่แล้ว ให้เลือกติ๊กหัวข้อ Build Tools / Workloads ดังต่อไปนี้:
+   - **.NET desktop development**
+   - **Desktop development with C++**
+   - **Game development with C++**
+4. กดเริ่มการดาวน์โหลดและติดตั้งไฟล์ C++
+5. โปรดรอจนกว่าการแตกไฟล์และการดาวน์โหลดทั้งหมดจะเสร็จสิ้น
+6. เมื่อการติดตั้งเสร็จสมบูรณ์ ให้ปิดโปรแกรม Visual Studio ออกไป
+
+## 📥 ดาวน์โหลดไฟล์ระบบและตัวเกม (Download Assets & Client)
+
+- **ANANTA Game Client (81.4 GB):** [ดาวน์โหลดตัวเกมผ่าน Gofile](https://gofile.io/d/AoWrjNoG)
 - **Patch Files (.dll):** [ดาวน์โหลดไฟล์ Patch (.dll) ผ่าน Transfer.it](https://transfer.it/t/rnH5BM1hGR4Y)
+- **Full Server & Client Assets (.tar.zst):** [ดาวน์โหลดไฟล์ Server ผ่าน Transfer.it](https://transfer.it/t/cinoqA4X0bib)
 - **Fix Device ID Error (Netease.zip):** [ดาวน์โหลด Netease.zip](https://cdn.discordapp.com/attachments/1550411381050712064/1550418157196550244/Netease.zip?ex=6ac6a6ae&is=6ac5552e&hm=fdb04995b96f41f149ee26a07692e929d1bf369b1df38c22bc8f2770ce8812e3&)
-- **Full Server Assets (.tar.zst):** [ดาวน์โหลดไฟล์ Server ผ่าน Transfer.it](https://transfer.it/t/cinoqA4X0bib)
 
-### 📂 วิธีติดตั้งตัวเกมและ Patch
-1. **การติดตั้ง Patch:** นำไฟล์ `.dll` ที่ดาวน์โหลดมา ไปวางไว้ในโฟลเดอร์ตัวเกม ANANTA
-2. **การแก้ไข device_id error:** แตกไฟล์ `Netease.zip` แล้วนำโฟลเดอร์ไปวางไว้ที่ตำแหน่ง:
-   `C:\Users\<your_account_name>\AppData\Roaming\`
+### 📂 วิธีติดตั้ง Patch และแก้ไข Error
+1. **การติดตั้งไฟล์ Patch (.dll):** นำไฟล์ `.dll` ที่ดาวน์โหลดมา ไปวางในโฟลเดอร์ตัวเกม ANANTA[cite: 23]
+2. **การแก้ไขปัญหา device_id error:** หากเจอปัญหา `device_id error` ให้ดาวน์โหลดไฟล์ `Netease.zip` แตกไฟล์แล้วนำไปวางไว้ที่ตำแหน่ง:[cite: 23]
+   `C:\Users\<your_account_name>\AppData\Roaming\`[cite: 23]
 3. **การแตกไฟล์ Server (.tar.zst):**
    - **ใช้ 7-Zip:** คลิกขวาที่ไฟล์ `AnantaPS-TH.tar.zst` > เลือก `7-Zip` > `Extract Here` (จะได้ไฟล์ `.tar`) จากนั้นคลิกขวาที่ไฟล์ `.tar` แล้วเลือก `Extract Here` อีกครั้ง
    - **ใช้ PowerShell:** เปิด PowerShell ในโฟลเดอร์แล้วพิมพ์คำสั่ง `tar -axvf AnantaPS-TH.tar.zst`
 
-## 🚀 วิธีใช้งานทั่วไป
+## 🚀 วิธีการเริ่มต้นใช้งาน (Getting Started)
 
-1. ติดตั้งโปรแกรมจำเป็นที่เกี่ยวข้องให้เรียบร้อย
+1. ติดตั้งโปรแกรมจำเป็น (VS Code, 7-Zip, Rust, Python, .NET 8.0, Node.js และ Visual Studio C++) ให้เรียบร้อย
 2. ดาวน์โหลดตัวเกม Patch และไฟล์ Server นำมาวางไว้ในโฟลเดอร์โปรเจกต์
-3. ดับเบิลคลิกเปิดโปรแกรม **`AnantaDEV.exe`**
-4. ในหน้าต่าง **Ananta Launcher**:
-   - เลือก **Game Path** ไปยังตำแหน่งโฟลเดอร์เกมของคุณ
-   - กดปุ่ม **Start server** เพื่อเริ่มต้นการทำงาน
-   - ตรวจสอบสถานะเซิร์ฟเวอร์ผ่านเบราว์เซอร์ที่ `http://127.0.0.1:17888/`
-   - กด **Launch game** เพื่อเข้าสู่เกม
-5. เมื่อใช้งานเสร็จ ให้หยุดเซิร์ฟเวอร์จาก Launcher ก่อนปิดโปรแกรม
+3. ดับเบิลคลิกเปิดโปรแกรม **`AnantaDEV.exe`**[cite: 23]
+4. ในหน้าต่าง **Ananta Launcher**:[cite: 23]
+   - เลือก **Game Path** ไปยังตำแหน่งโฟลเดอร์เกมของคุณ[cite: 23]
+   - กดปุ่ม **Start server** เพื่อเริ่มต้นการทำงาน[cite: 23]
+   - ตรวจสอบสถานะเซิร์ฟเวอร์ผ่านเบราว์เซอร์ที่ `http://127.0.0.1:17888/`[cite: 23]
+   - กด **Launch game** เพื่อเข้าสู่เกม[cite: 23]
 
-## ⚙️ การตั้งค่าใน Launcher
+## ⚙️ การตั้งค่าเพิ่มเติมใน Launcher
 
-- **Install certificate:** ติดตั้งและจัดการใบรับรองความปลอดภัยที่ Launcher ใช้ (แก้ปัญหา "failed to get config info")
-- **Install fast-start patch:** เปิดใช้ตัวเลือกเริ่มต้นเซิร์ฟเวอร์แบบรวดเร็ว ข้ามดีเลย์ช่วงเริ่มต้นเซิร์ฟเวอร์
-- **Traffic / Crowd / Destructible:** สวิตช์เปิดหรือปิดองค์ประกอบการจราจร ฝูงชน และวัตถุในฉาก
-- **Show console window:** แสดงหน้าต่างคอนโซลเพื่อดูข้อความสถานะและช่วยตรวจสอบปัญหา
-
-หากพบปัญหา ให้ตรวจสอบสถานะใน Launcher และข้อความในคอนโซลก่อน จากนั้นตรวจสอบว่าเซิร์ฟเวอร์เริ่มทำงานแล้วและเปิด Web Console จากเครื่องเดียวกัน
+- **Install certificate:** ติดตั้งใบรับรองความปลอดภัย (แก้ปัญหา "failed to get config info")[cite: 23]
+- **Install fast-start patch:** ข้ามดีเลย์ช่วงเริ่มต้นเซิร์ฟเวอร์[cite: 23]
+- **Traffic / Crowd / Destructible:** สวิตช์เปิด-ปิดการจราจร ฝูงชน และวัตถุในฉาก[cite: 23]
+- **Show console window:** เปิดหน้าต่างคอนโซลสำหรับตรวจสอบ/แก้ปัญหา[cite: 23]
 
 ---
 
