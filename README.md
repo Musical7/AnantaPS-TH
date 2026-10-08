@@ -90,7 +90,7 @@
 
 | รายการไฟล์ | ลิงก์ดาวน์โหลด | คำอธิบาย |
 | :--- | :--- | :--- |
-| **ANANTA Game Client** | [Gofile (81.4 GB)](https://gofile.io/d/AoWrjNoG) | ตัวเกมเต็ม |
+| **ANANTA DEV Game Client** | [Transfer.it](https://transfer.it/t/map2igpVRLwR) | ตัวเกมเต็ม |
 | **Patch Files (.dll)** | [Transfer.it](https://transfer.it/t/rnH5BM1hGR4Y) | ไฟล์ Patch สำหรับวางในโฟลเดอร์เกม |
 | **Full Server & Client Assets** | [Transfer.it](https://transfer.it/t/cinoqA4X0bib) | ไฟล์ Server รวมแบบ `.tar.zst` |
 | **Fix Device ID Error (`Netease.zip`)** | [Transfer.it](https://transfer.it/t/j5lOSY4zSThA) | ไฟล์แก้ไขปัญหากดเข้าเกมแล้วเจอ `Device ID Error` |
