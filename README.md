@@ -86,27 +86,7 @@
 
 ---
 
-## 📥 ดาวน์โหลดไฟล์ระบบและตัวเกม (Download Assets & Client)
 
-| รายการไฟล์ | ลิงก์ดาวน์โหลด | คำอธิบาย |
-| :--- | :--- | :--- |
-| **ANANTA DEV Game Client** | [Transfer.it](https://transfer.it/t/map2igpVRLwR) | ตัวเกมเต็ม |
-| **Patch Files (.dll)** | [Transfer.it](https://transfer.it/t/rnH5BM1hGR4Y) | ไฟล์ Patch สำหรับวางในโฟลเดอร์เกม |
-| **Full Server & Client Assets** | [Transfer.it](https://transfer.it/t/cinoqA4X0bib) | ไฟล์ Server รวมแบบ `.tar.zst` |
-| **Fix Device ID Error (`Netease.zip`)** | [Transfer.it](https://transfer.it/t/j5lOSY4zSThA) | ไฟล์แก้ไขปัญหากดเข้าเกมแล้วเจอ `Device ID Error` |
----
-## 📂 วิธีติดตั้ง Patch และแก้ไข Error
-
-1. **การติดตั้งไฟล์ Patch (.dll):** นำไฟล์ `.dll` ที่ดาวน์โหลดมา ไปวางในโฟลเดอร์ตัวเกม ANANTA
-2. **การแก้ไขปัญหา device_id error:** หากเจอปัญหา `device_id error` ให้ดาวน์โหลดไฟล์ `Netease.zip` แตกไฟล์แล้วนำไปวางไว้ที่ตำแหน่ง:
-   ```text
-   C:\Users\<your_account_name>\AppData\Roaming\
-3. **การแตกไฟล์ Server (.tar.zst):**
-* **ใช้ 7-Zip:** คลิกขวาที่ไฟล์ `AnantaPS-TH.tar.zst` > เลือก `7-Zip` > `Extract Here` (จะได้ไฟล์ `.tar`) จากนั้นคลิกขวาที่ไฟล์ `.tar` แล้วเลือก `Extract Here` อีกครั้ง
-* **ใช้ PowerShell:** เปิด PowerShell ในโฟลเดอร์แล้วพิมพ์คำสั่ง:
-```powershell
-tar -axvf AnantaPS-TH.tar.zst
-```
 ## 🚀 วิธีการเริ่มต้นใช้งาน (Getting Started)
 
 1. ติดตั้งโปรแกรมจำเป็น (VS Code, 7-Zip, Rust, Python, .NET 8.0, Node.js และ Visual Studio C++) ให้เรียบร้อย
@@ -117,8 +97,6 @@ tar -axvf AnantaPS-TH.tar.zst
 * กดปุ่ม **Start server** เพื่อเริ่มต้นการทำงาน
 * ตรวจสอบสถานะเซิร์ฟเวอร์ผ่านเบราว์เซอร์ที่ `http://127.0.0.1:17888/`
 * กด **Launch game** เพื่อเข้าสู่เกม
-
-
 
 ---
 
