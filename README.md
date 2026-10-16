@@ -4,7 +4,7 @@
 
 ระบบจัดการเซิร์ฟเวอร์จำลองและ Launcher สำหรับโปรเจกต์ Ananta
 
-![Ananta Preview](./image.png)
+![Ananta Preview](./image.png?v=2)
 
 ---
 
